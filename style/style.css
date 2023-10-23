@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Comfortaa&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Comfortaa', sans-serif;
+}
+
+header {
+    padding: 8px;
+    text-align: center;
+}
+
+header > h1 {
+    font-size: 26px;
+}
+
+main {
+    padding: 12px 120px 0px 120px;
+}
+
+form {
+    margin-top: 10px;
+}
+
+input {
+    padding: 8px;
+    width: 50%;
+}
+
+button {
+    padding: 8px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+.action-edit {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
