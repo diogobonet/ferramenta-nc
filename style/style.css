@@ -5,6 +5,7 @@
 }
 
 body {
+    background-color: #eeeeee;
     font-family: 'Comfortaa', sans-serif;
 }
 
@@ -52,4 +53,48 @@ table, th, td {
 th, td {
     padding: 8px;
     text-align: left;
+}
+
+form#formulario-login{
+    padding: 0;margin: 0;
+    height: 70%;
+    width: 40%;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-around;
+    border: black 2px solid;
+    border-radius: 10px;
+    min-width: 400px;
+    min-height: 300px;
+    box-shadow: 0px 0px 6px 1px black;
+}
+form#formulario-login div{
+    height: 30%;
+}
+form#formulario-login label{
+    display:flex; justify-content: space-around; align-items: center;
+
+    height: 50%; width: 60%; min-width: 350px;
+    font-size: 1.5rem;
+    cursor:pointer;
+}
+form#formulario-login label input{
+    font-family: 'Comfortaa', sans-serif;
+    border: black 2px solid;
+    border-radius: 1rem;
+}
+form#formulario-login h1{
+    text-align: center;
+    font-size: 3rem;
+}
+main#main-login{
+    height: 100vh; width: 100vw;
+    padding: 0;margin: 0;
+    display:flex; justify-content: center; align-items: center;
+}
+button#botao-submit{
+    width: 40%; height: 2rem;
+    font-size: 1rem;
+    padding: 5px; margin: 0;
+    border-radius: 8px;
+    font-family: 'Comfortaa', sans-serif;
+    cursor:pointer;
 }
