@@ -11,12 +11,12 @@
         <h1>Ferramenta de Não Conformidade - Checklist</h1>
         <form>
             <input type="text" placeholder="Digite a pergunta:" name="input-info" id="input-info">
-            <button type="submit">Criar checklist</button>
+            <button id="criar-pergunta-button" type="submit">Criar checklist</button>
         </form>
     </header>
 
     <main>
-        <table style="width: 100%;">
+        <table id="tabela-checklist" style="width: 100%;">
             <tr>
                 <th>Checklist</th>
                 <th>Área</th>
@@ -24,8 +24,8 @@
                 <th>Resultado</th>
                 <th>Ações</th>
             </tr>
-            <tr style="width: 100%;">
-                <td>
+            <tr class="perguntas-tr">
+                <td class="checkbox-td">
                     <input type="checkbox" name="" id=""> <!-- Checkbox -->
                 </td>
                  <td>Titulo</td> <!-- Area -->
@@ -38,5 +38,9 @@
             </tr>
         </table>
     </main>
+    <script lang="JavaScript" src="js/Tabela.js"></script>
+    <script>
+        tabela = new Tabela();
+    </script>
 </body>
 </html>
