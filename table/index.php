@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
 <body>
     <header>
         <h1>Ferramenta de Não Conformidade - Tabela</h1>
+        <h3>Usuário: <?= $_SESSION['nome_logado'] ?></h3>
     </header>
 
     <main>
