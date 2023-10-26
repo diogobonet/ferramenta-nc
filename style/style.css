@@ -33,6 +33,7 @@ input {
 
 button {
     padding: 8px;
+    cursor:pointer;
 }
 
 div#div-table{
