@@ -35,6 +35,11 @@ button {
     padding: 8px;
 }
 
+div#div-table{
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;

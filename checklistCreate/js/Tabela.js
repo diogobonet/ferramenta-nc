@@ -17,7 +17,7 @@ class Tabela{
         let pergunta = this.perguntaInput.value;
 
         if(pergunta != ''){
-            this.tabela.innerHTML += `<tr class='perguntas-tr'><td><input type='checkbox' name='' id=''></td><td>Titulo</td><td>${pergunta}</td><td>Sim</td><td class='action-edit'><a href=''>Editar</a><a href=''>Excluir</a></td></tr>`
+            this.tabela.innerHTML += `<tr class="perguntas-tr"><td class="checkbox-td"><h5>1</h5></td><td>Titulo</td><td>${pergunta}</td><td>Sim ☝</td><td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td><td class="action-edit"><a href="">Editar</a><a href="">Excluir</a></td></tr>`
             this.perguntaInput.value = "";
         }
 
@@ -26,17 +26,6 @@ class Tabela{
 
 /*
 
-<tr style="width: 100%;">
-    <td>
-        <input type="checkbox" name="" id=""> <!-- Checkbox -->
-    </td>
-    <td>Titulo</td> <!-- Area -->
-    <td>O título foi definido e está de acordo com o projeto?</td> <!-- Pergunta -->
-    <td>Sim</td> <!-- Resultado -->
-    <td class="action-edit">
-        <a href="">Editar</a>
-        <a href="">Excluir</a>
-    </td>
-</tr>
+<tr class="perguntas-tr"><td class="checkbox-td"><h5>1</h5></td><td>Titulo</td><td>O título foi definido e está de acordo com o projeto?</td><td>Sim ☝</td><td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td><td class="action-edit"><a href="">Editar</a><a href="">Excluir</a></td></tr>
 
 */
