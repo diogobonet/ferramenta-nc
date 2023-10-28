@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Ferramenta de Não Conformidade - Checklist</h1>
+        <h1>Checklist - $result['nome_checklist']</h1>
         <form>
             <input type="text" placeholder="Digite a pergunta:" name="input-info" id="input-info">
             <button id="criar-pergunta-button" type="submit">Adicionar pergunta</button>
@@ -27,18 +27,28 @@
                     <th>Ações</th>
                 </tr>
                 <tr class="perguntas-tr">
-                    <td class="checkbox-td">
-                        <h5>1</h5> <!-- Checkbox -->
+                    <td class="checkbox-td" style="width: 5%;">
+                        <h5>1</h5>
                     </td>
-                     <td>Titulo</td> <!-- Area -->
-                    <td>O título foi definido e está de acordo com o projeto?</td> <!-- Pergunta -->
-                    <td>
-                        Sim ☝
-                    </td> <!-- Resultado -->
-                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+                    <td style="width: 10%;"> <!-- Area -->
+                        <textarea class="textarea-input" id="input-area" type="text">Engenharia de requisitos</textarea>
+                    </td>
+                    <td style="width: 30%;"> <!-- Pergunta -->
+                        <textarea class="textarea-input" id="input-pergunta" type="text">O título foi definido e está de acordo com o projeto?</textarea>
+                    </td>
+                    <td style="width: 5%;"> <!-- Resultado -->
+                        <select id="input-resultado">
+                            <option value="Sim" selected>Sim</option>
+                            <option value="Não">Não</option>
+                            <option value="N/A">N/A</option>
+                        </select>
+                    </td>
+                    <td style="width: 30%;">
+                        <textarea class="textarea-input" id="input-observacoes" type="text">Observações desse item do checklist aqui.</textarea>
+                    </td>
                     <td class="action-edit">
-                        <a href="">Editar</a>
-                        <a href="">Excluir</a>
+                        <a href="">Salvar alterações</a>
+                        <a href="">Excluir pergunta</a>
                     </td>
                 </tr>
             </table>

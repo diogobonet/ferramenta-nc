@@ -52,10 +52,8 @@ table, th, td {
 
 .action-edit {
     display: flex;
-    justify-content: center;
-    gap: 8px;
-    border: none;
-    text-align: center;
+    justify-content: space-around;
+    align-items: center;
 }
 
 th {
@@ -65,6 +63,20 @@ th {
 th, td {
     padding: 8px;
     text-align: center;
+}
+
+input.td-input{
+    padding: 0.5rem 0; margin: 0;
+    border-radius: 0.5rem;
+    width: 100%; 
+    border:none;
+}
+
+.textarea-input{
+    width: 100%; 
+    border:none;
+    resize: none;
+    font-family: "Comfortaa", Arial, sans-serif;
 }
 
 tr.perguntas-tr{
