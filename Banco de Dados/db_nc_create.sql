@@ -8,7 +8,7 @@ CREATE TABLE `usuario` (
   `nome` varchar(100) NOT NULL,
   PRIMARY KEY (`email`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 DROP TABLE IF EXISTS `checklist`;
 CREATE TABLE `checklist` (
@@ -19,7 +19,7 @@ CREATE TABLE `checklist` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `FK_usuario_email_idx` (`FK_usuario_email`),
   CONSTRAINT `FK_usuario_email` FOREIGN KEY (`FK_usuario_email`) REFERENCES `usuario` (`email`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 DROP TABLE IF EXISTS `itens`;
 CREATE TABLE `itens` (
@@ -33,7 +33,7 @@ CREATE TABLE `itens` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `FK_id_checklist_idx` (`FK_id_checklist`),
   CONSTRAINT `FK_id_checklist` FOREIGN KEY (`FK_id_checklist`) REFERENCES `checklist` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 DROP TABLE IF EXISTS `nao_conformidades`;
 CREATE TABLE `nao_conformidades` (
@@ -51,5 +51,5 @@ CREATE TABLE `nao_conformidades` (
   KEY `FK_id_pergunta_idx` (`FK_id_pergunta`),
   CONSTRAINT `FK_id_checklist_nc` FOREIGN KEY (`FK_id_checklist_nc`) REFERENCES `checklist` (`id`) ON DELETE CASCADE,
   CONSTRAINT `FK_id_pergunta` FOREIGN KEY (`FK_id_pergunta`) REFERENCES `itens` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
