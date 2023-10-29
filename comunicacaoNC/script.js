@@ -1,4 +1,5 @@
 const btnGenerate = document.querySelector('#button-send')
+const redirectButton = document.querySelector('#sendEmail')
 let email = document.getElementById('email')
 let fileInput = document.getElementById("file");
 
@@ -17,5 +18,7 @@ document.getElementById("exportarPDF").addEventListener("click", function () {
     html2pdf().set(options).from(tabela).outputPdf().save();
 });
 
-
-
+redirectButton.addEventListener('click', function(e) {
+    e.preventDefault()
+    window.open('https://mail.google.com/mail/u/0/#inbox?compose=new');
+});
