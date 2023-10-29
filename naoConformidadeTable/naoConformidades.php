@@ -1,3 +1,7 @@
+<?php
+    require("exe/busca.php");
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -18,27 +22,17 @@
                 <th>Projeto</th>
                 <th>Artefato</th>
                 <th>Descrição</th>
-                <th>Resultado</th>
                 <th>Já ocorreu</th>
                 <th>Observações</th>
                 <th>Classificação</th>
                 <th>Ação corretiva</th>
                 <th>Ação</th>
             </tr>
-            <tr class="perguntas-tr">
-                <td>1</td> <!-- ID -->
-                <td>Simov - Sistema de controle de imoveis</td> <!-- Projeto -->
-                <td>Lista de requisitos</td> <!-- Artefato -->
-                <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime corporis vero nisi tempore repudiandae?</td> <!-- Descrição -->
-                <td>Não</td> <!-- Resultado -->
-                <td>Não se aplica</td> <!-- Já ocorreu -->
-                <td>O Brasil merece um time melhor</td> <!-- Observações -->
-                <td>Média - 3 dias</td> <!-- Classificação -->
-                <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</td> <!-- Ação corretiva -->
-                <td>
-                    <button>Gerar NC</button>
-                </td> <!-- Ação corretiva -->
-            </tr>
+
+            <?php 
+                $idchecklist = $_GET['idchecklist'];
+                buscarNaoConformidades($conn, $idchecklist);
+            ?>
         </table>
         
     </main>

@@ -27,7 +27,7 @@
                 }
 
                 $conn->close();
-                header("location: ../../naoConformidadeTable/index.html?idchecklist=" . $idchecklist);
+                header("location: ../../naoConformidadeTable/naoConformidades.php?idchecklist=" . $idchecklist);
             }
             else {
                 echo "<h1>Nenhuma pergunta postada até agora!</h1>";

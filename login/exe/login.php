@@ -25,7 +25,7 @@
                 $_SESSION["email_logado"] = $email;
                 $_SESSION["nome_logado"] = $nome;
 
-                header("location: ../../createChecklist/index.php");
+                header("location: ../../checklist/checklist.php");
             }else{
                 $conn->close();
                 header("location: ../index.html?erro=contaNaoEncontrada");

@@ -12,6 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="./grafico/grafico.css">
     <title>Ferramenta de Não Conformidades</title>
 </head>
 <body>
@@ -47,13 +48,34 @@
                 $query = $conn->query($sql);
                 if($query->num_rows > 0){ 
             ?>
-                <button onclick="redirecionar('../naoConformidadeTable?idchecklist=<?= $_GET['idchecklist']; ?>')">Ver tabela de Não Conformidades</button>
+                <button onclick="redirecionar('../naoConformidadeTable/naoConformidades.php?idchecklist=<?= $_GET['idchecklist']; ?>')">Ver tabela de Não Conformidades</button>
             <?php } else { ?>
                 <button onclick="redirecionar('exe/gerarNC.php?idchecklist=<?= $_GET['idchecklist']; ?>')">Gerar Não Conformidades</button>
             <?php } ?>
         </div>
         
+        <div style="width: 100%; display:flex; justify-content:center;">
+            <figure class="pie-chart">
+	            <figcaption>
+	        	    N/a<span style="color:#dddddd"></span><br>
+	        	    Sim<span style="color:#009063"></span><br>
+	        	    Não<span style="color:#da2f2f"></span>
+	            </figcaption>
+            </figure>
+        </div>
+
+        <?php
+            $quantidadeNao = $conn->query("SELECT COUNT(*) FROM itens WHERE resultado = 'Não' AND FK_id_checklist = $idchecklist")->fetch_assoc();
+            $quantidadeSim = $conn->query("SELECT COUNT(*) FROM itens WHERE resultado = 'Sim' AND FK_id_checklist = $idchecklist;")->fetch_assoc();
+            $quantidadeNA  = $conn->query("SELECT COUNT(*) FROM itens WHERE resultado = 'N/A' AND FK_id_checklist = $idchecklist;")->fetch_assoc();
+        ?>
+
+        <input style='display:none' id="nao-input" type="text" value="<?= $quantidadeNao["COUNT(*)"]; ?>">
+        <input style='display:none' id="sim-input" type="text" value="<?= $quantidadeSim["COUNT(*)"]; ?>">
+        <input style='display:none' id="na-input"  type="text" value="<?= $quantidadeNA["COUNT(*)"];  ?>"> 
+
     </main>
     <script lang="JavaScript" src="../util.js"></script>
+    <script lang="JavaScript" src="./grafico/grafico.js"></script>
 </body>
 </html>
