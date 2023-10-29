@@ -12,7 +12,7 @@
             $pergunta    = $_POST["input-info"];
             $idchecklist = $_GET["idchecklist"];
     
-            $sql = "INSERT INTO itens (area, pergunta, resultado, observacoes, FK_id_checklist) VALUES ('-', '$pergunta', 'N/A', '-', $idchecklist);";
+            $sql = "INSERT INTO itens (area, pergunta, resultado, observacoes, FK_id_checklist) VALUES ('-', '$pergunta', 'Selecionar', '-', $idchecklist);";
 
             if(!$conn->query($sql)){
                 echo "Algo deu errado! Por favor ligar para o ADM 💀";

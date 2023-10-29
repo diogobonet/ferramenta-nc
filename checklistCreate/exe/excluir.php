@@ -10,7 +10,7 @@
             $conn->query($sqlDel);
             header("location: ../checklist.php?idchecklist=" . $idchecklist);
         } else{
-            header("location: ../checklist.php?idchecklist=" . $idchecklist . "&erro=NaoTemEssaPergu");
+            header("location: ../checklist.php?idchecklist=" . $idchecklist . "&erro=NaoTemEssaPergunta");
         }
         
     }

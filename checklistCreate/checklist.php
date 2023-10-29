@@ -42,7 +42,15 @@
         </div>
 
         <div class="footer-buttons">
-            <button>Gerar Não Conformidade</button>
+            <?php
+                $sql = "SELECT FK_id_checklist_nc FROM nao_conformidades WHERE FK_id_checklist_nc = " . $_GET['idchecklist'];
+                $query = $conn->query($sql);
+                if($query->num_rows > 0){ 
+            ?>
+                <button onclick="redirecionar('../naoConformidadeTable?idchecklist=<?= $_GET['idchecklist']; ?>')">Ver tabela de Não Conformidades</button>
+            <?php } else { ?>
+                <button onclick="redirecionar('exe/gerarNC.php?idchecklist=<?= $_GET['idchecklist']; ?>')">Gerar Não Conformidades</button>
+            <?php } ?>
         </div>
         
     </main>

@@ -1,0 +1,68 @@
+<style>
+    :root{
+        --na: 33.3%;
+        --s: 66.6%;
+        --n: 99.9%;
+    }
+
+	.pie-chart {
+		background:
+			radial-gradient(
+				circle closest-side,
+				transparent 60%,
+				white 0
+			),
+			conic-gradient(
+                #dddddd 0%,
+				#dddddd var(--na),
+                #59a14f 0%,
+				#59a14f var(--s),
+                #863030 0%,
+				#863030 var(--n)
+		);
+		position: relative;
+		width: 600px;
+		min-height: 650px;
+		margin: 0;
+	}
+	.pie-chart figcaption {
+		position: absolute;
+		bottom: 1em; right: 1em;
+		text-align: right;
+	}
+	.pie-chart span {
+        display: inline-block;
+		width: 0.8em; height: 0.8em;
+		background: currentColor;
+	}
+</style>
+
+<figure class="pie-chart">
+	<figcaption>
+		N/a<span style="color:#dddddd"></span><br>
+		Sim<span style="color:#59a14f"></span><br>
+		Não<span style="color:#863030"></span>
+	</figcaption>
+</figure>
+
+<input id="nao" type="text"> <button id="naobtn">Enviar nao</button>
+<input id="sim" type="text"> <button id="simbtn">Enviar sim</button>
+<input id="n-a" type="text"> <button id="n-abtn">Enviar n/a</button>
+
+<script>
+    let root  = document.querySelector(":root");
+
+    let botaoN  = document.getElementById('naobtn');  
+    let nao = document.getElementById('nao');
+    
+    let botaoS  = document.getElementById('naobsim'); 
+    let sim = document.getElementById('sim');
+
+    let botaoNA = document.getElementById('naon-a');  
+    let na = document.getElementById('n-a');
+
+    btnN.addEventListener('click', () => {
+        let novapc = (nao.value/3);
+        root.style.setProperty("--sua-variavel", "75%");
+    })
+</script>
