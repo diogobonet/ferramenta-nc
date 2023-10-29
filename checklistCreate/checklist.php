@@ -36,7 +36,7 @@
                 </tr>
                 <?php
                     $idchecklist = $_GET['idchecklist'];
-                    pesquisar($conn, $idchecklist);
+                    buscarPergunta($conn, $idchecklist);
                 ?>
             </table>
         </div>
