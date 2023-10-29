@@ -34,8 +34,11 @@
                 buscarNaoConformidades($conn, $idchecklist);
             ?>
         </table>
-        
+        <div class="footer-buttons">
+            <button onclick="redirecionar('../checklist/checklist.php?idchecklist=<?= $idchecklist ?>')">Voltar</button>
+        </div>
     </main>
+    <script lang="JavaScript" src="../util.js"></script>
     <script lang="JavaScript" src="js/Tabela.js"></script>
     <script> tabela = new Tabela(); </script>
 </body>

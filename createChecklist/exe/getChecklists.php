@@ -21,7 +21,7 @@
                             </td>
                             <td>" . $result['nome'] . "</td>
                             <td class='action-edit'>
-                                <a href='../checklistCreate/checklist.php?idchecklist=" . $result['id'] . "'>Abrir</a>
+                                <a href='../checklist/checklist.php?idchecklist=" . $result['id'] . "'>Abrir</a>
                                 <a href=''>Editar</a>
                                 <a href=''>Excluir</a>
                             </td>

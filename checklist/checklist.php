@@ -52,6 +52,8 @@
             <?php } else { ?>
                 <button onclick="redirecionar('exe/gerarNC.php?idchecklist=<?= $_GET['idchecklist']; ?>')">Gerar Não Conformidades</button>
             <?php } ?>
+
+            <button onclick="redirecionar('../createChecklist/index.php')">Voltar</button>
         </div>
         
         <div style="width: 100%; display:flex; justify-content:center;">

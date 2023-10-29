@@ -1,5 +1,6 @@
 <?php
     require("../conn.php");
+    session_start();
     $sql = "SELECT nc.id AS nao_conformidade_id,
                 nc.projeto,
                 nc.artefato,
@@ -9,7 +10,8 @@
                 i.id AS FK_id_pergunta,
                 i.pergunta,
                 i.resultado,
-                i.observacoes
+                i.observacoes,
+                nc.FK_id_checklist_nc
             FROM nao_conformidades nc
             JOIN itens i ON nc.FK_id_pergunta = i.id
             WHERE nc.id = ". $_GET['idnaoconformidade'] .";
@@ -24,6 +26,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
     <title>Comunicação NC</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -45,17 +50,17 @@
                 <th>Responsável:</th>
                 <td>Diogo</td>
                 <th>Prazo de Resolução:</th>
-                <td>11/2021</td>
+                <td id='data-prazo'></td>
             </tr>
             <tr>
                 <th>Data da Solicitação:</th>
-                <td>03/11/2021</td>
+                <td id='data-solicitacao'></td>
                 <th>Nº de Escalonamentos:</th>
                 <td>0</td>
             </tr>
             <tr>
                 <th>RQA Responsável:</th>
-                <td colspan="3">Vinícius</td>
+                <td colspan="3"><?=  $_SESSION['nome_logado']; ?></td>
             </tr>
             <tr>
                 <th colspan="4"><strong>Você tem 24 horas úteis para contestação.</strong></th>
@@ -82,9 +87,15 @@
         </table>
 
         <div class="footer-buttons">
-            <input type="email" name="email" id="email" placeholder="Destinatário">
-            <button>Enviar via e-mail</button>
+            <button id="exportarPDF">Exportar PDF</button>
+            <button id="sendEmail">Enviar via e-mail</button>
+            <button onclick="redirecionar('../naoConformidadeTable/naoConformidades.php?idchecklist=<?= $result['FK_id_checklist_nc']; ?>')">Voltar</button>
         </div>
     </main>
+    <script lang="JavaScript" src="../util.js"></script>
+    <script lang='text/JavaScript' src='data.js'></script>
+    <script lang='text/JavaScript'>
+        calcularPrazo('<?= $result['classificacao']; ?>');
+    </script>
 </body>
 </html>
