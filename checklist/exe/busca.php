@@ -54,7 +54,7 @@
                                 <textarea name='input-observacoes' class='textarea-input' id='input-observacoes' type='text'>" . $result['observacoes'] . "</textarea>
                             </td>
                             <td class='action-edit'>
-                                <button>Salvar</button>
+                                <button class='button-save'>Salvar</button>
                                 <a href='exe/excluir.php?idpergunta=" . $result['id'] . "&idchecklist=" . $result['FK_id_checklist'] . "'>Excluir</a>
                             </td>
                         </form>

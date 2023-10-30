@@ -89,7 +89,7 @@
                             <textarea name='input-acao-corretiva' class='textarea-input' id='input-acao-corretiva' type='text'>" . $result['acao_corretiva'] . "</textarea>
                         </td>
                         <td>
-                            <button>Salvar</button>
+                            <button class='button-save'>Salvar</button>
                             <a href='../comunicacaoNC/comunicacaoNC.php?idnaoconformidade=". $result['nao_conformidade_id'] ."&idchecklist=". $idchecklist ."'>Gerar Comunicado</a>
                         </td> <!-- Ação corretiva -->
                     </form>

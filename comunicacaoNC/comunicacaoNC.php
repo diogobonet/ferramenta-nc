@@ -2,8 +2,8 @@
     require("../conn.php");
     session_start();
 
-    if (!isset($_SESSION['usuario_logado'])) {
-        header('Location: ../login/login.php');
+    if (!isset($_SESSION["email_logado"])) {
+        header('Location: ../login/index.html');
         exit;
     }
 
@@ -32,9 +32,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
     <title>Comunicação NC</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script src="script.js" defer></script>
+    
 </head>
 <body>
     <header>
@@ -42,7 +40,7 @@
     </header>
     
     <main>
-        <table>
+        <table id="tabela">
             <caption>Solicitação de Resolução de Não Conformidade</caption>
             <tr>
                 <th>Código de Controle:</th>
@@ -90,6 +88,7 @@
                 <th><strong>Observações:</strong></th>
                 <td colspan="3"><?= $result['observacoes']; ?></td>
             </tr>
+            <th colspan="4"><span id="date"></span></th>
         </table>
 
         <div class="footer-buttons">
@@ -98,6 +97,9 @@
             <button onclick="redirecionar('../naoConformidadeTable/naoConformidades.php?idchecklist=<?= $result['FK_id_checklist_nc']; ?>')">Voltar</button>
         </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="script.js"></script>
     <script lang="JavaScript" src="../util.js"></script>
     <script lang='text/JavaScript' src='data.js'></script>
     <script lang='text/JavaScript'>

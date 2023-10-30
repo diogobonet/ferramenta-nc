@@ -2,8 +2,8 @@
     require("exe/getChecklists.php");
     session_start(); 
 
-    if (!isset($_SESSION['usuario_logado'])) {
-        header('Location: ../login/login.php');
+    if (!isset($_SESSION["email_logado"])) {
+        header('Location: ../login/index.html');
         exit;
     }
 ?>

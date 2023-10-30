@@ -150,3 +150,12 @@ button#botao-submit:hover {
 select {
     padding: 5px;
 }
+
+.button-save {
+    text-decoration: underline;
+    background-color: none;
+    border: none;
+    font-size: 16px;
+    font-family: 'Comfortaa', sans-serif;
+    color: blue;
+}
