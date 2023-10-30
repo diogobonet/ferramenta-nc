@@ -1,6 +1,11 @@
 <?php
     require("exe/busca.php");
     session_start(); 
+
+    if (!isset($_SESSION['usuario_logado'])) {
+        header('Location: ../login/login.php');
+        exit;
+    }
     
     $sqlName = "SELECT nome FROM checklist WHERE id = " . $_GET['idchecklist'];
     $queryName = $conn->query($sqlName);

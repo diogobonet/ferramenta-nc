@@ -1,6 +1,12 @@
 <?php
     require("../conn.php");
     session_start();
+
+    if (!isset($_SESSION['usuario_logado'])) {
+        header('Location: ../login/login.php');
+        exit;
+    }
+
     $sql = "SELECT nc.id AS nao_conformidade_id,
                 nc.projeto,
                 nc.artefato,

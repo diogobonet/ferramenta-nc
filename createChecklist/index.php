@@ -1,6 +1,11 @@
 <?php
     require("exe/getChecklists.php");
     session_start(); 
+
+    if (!isset($_SESSION['usuario_logado'])) {
+        header('Location: ../login/login.php');
+        exit;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
