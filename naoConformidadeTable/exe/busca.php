@@ -13,6 +13,7 @@
                             nc.ja_ocorreu,
                             nc.classificacao,
                             nc.acao_corretiva,
+                            nc.concluido,
                             i.id AS FK_id_pergunta,
                             i.pergunta,
                             i.resultado,
@@ -25,11 +26,11 @@
             if($query->num_rows > 0){
                 
                 while($result = $query->fetch_assoc()){
-                    $selectedSelecionar = ""; $selectedSim = "";
+                    $selectedSelecionar1 = ""; $selectedSim = "";
                     $selectedNao        = ""; $selectedNA  = "";
  
                     if($result['ja_ocorreu'] == "Selecionar") {
-                        $selectedSelecionar = "selected";
+                        $selectedSelecionar1 = "selected";
                     }
                     elseif($result['ja_ocorreu'] == "Sim") {
                         $selectedSim = "selected";
@@ -41,11 +42,11 @@
                         $selectedNA = "selected";
                     }
 
-                    $selectedSelecionar = ""; $selectedAlta = "";
+                    $selectedSelecionar2 = ""; $selectedAlta = "";
                     $selectedMedia        = ""; $selectedBaixa  = "";
  
                     if($result['classificacao'] == "Selecionar") {
-                        $selectedSelecionar = "selected";
+                        $selectedSelecionar2 = "selected";
                     }
                     elseif($result['classificacao'] == "Alta - 2 dias") {
                         $selectedAlta = "selected";
@@ -55,6 +56,19 @@
                     }
                     else {
                         $selectedBaixa = "selected";
+                    }
+
+                    $selectedSelecionar3 = ""; $selectedSim3 = "";
+                    $selectedNao3        = "";
+ 
+                    if($result['concluido'] == "Selecionar") {
+                        $selectedSelecionar1 = "selected";
+                    }
+                    elseif($result['concluido'] == "Sim") {
+                        $selectedSim = "selected";
+                    }
+                    else($result['concluido'] == "Não") {
+                        $selectedNao = "selected";
                     }
 
                     echo "
@@ -70,7 +84,7 @@
                         <td>". $result['pergunta'] ."</td> <!-- Descrição -->
                         <td style='width: 5%;'> <!-- Já ocorreu -->
                             <select name='input-ja-ocorreu' id='input-ja-ocorreu'>  
-                                <option value='Selecionar' $selectedSelecionar>Selecionar</option>
+                                <option value='Selecionar' $selectedSelecionar1>Selecionar</option>
                                 <option value='Sim' $selectedSim>Sim</option>
                                 <option value='Não' $selectedNao>Não</option>
                                 <option value='N/A' $selectedNA>N/A</option>
@@ -79,7 +93,7 @@
                         <td>". $result['observacoes'] ."</td> <!-- Observações -->
                         <td style='width: 5%;'> <!-- Classificação -->
                             <select name='input-classificacao' id='input-classificacao'>  
-                                <option value='Selecionar' $selectedSelecionar>Selecionar</option>
+                                <option value='Selecionar' $selectedSelecionar2>Selecionar</option>
                                 <option value='Alta - 2 dias' $selectedAlta>Alta - 2 dias</option>
                                 <option value='Média - 3 dias' $selectedMedia>Média - 3 dias</option>
                                 <option value='Baixa - 4 dias' $selectedBaixa>Baixa - 4 dias</option>
@@ -87,6 +101,13 @@
                         </td>
                         <td style='width: 10%;'> <!-- Ação corretiva -->
                             <textarea name='input-acao-corretiva' class='textarea-input' id='input-acao-corretiva' type='text'>" . $result['acao_corretiva'] . "</textarea>
+                        </td>
+                        <td style='width: 5%;'> <!-- Concluído -->
+                            <select name='input-concluido' id='input-concluido'>  
+                                <option value='Selecionar' $selectedSelecionar3>Selecionar</option>
+                                <option value='Sim' $selectedSim3>Sim</option>
+                                <option value='Não' $selectedNão3>Não</option>
+                            </select>
                         </td>
                         <td>
                             <button class='button-save'>Salvar</button>
