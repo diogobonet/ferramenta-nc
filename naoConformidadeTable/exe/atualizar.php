@@ -11,13 +11,15 @@
             $ja_ocorreu        = $_POST['input-ja-ocorreu'];
             $classificacao     = $_POST['input-classificacao'];
             $acao_corretiva    = $_POST['input-acao-corretiva'];
+            $concluido         = $_POST['input-concluido'];
 
             $sqlUp = "UPDATE nao_conformidades SET 
-            projeto = '$projeto',
-            artefato = '$artefato',
-            ja_ocorreu = '$ja_ocorreu',
-            classificacao = '$classificacao',
-            acao_corretiva = '$acao_corretiva'
+            projeto        = '$projeto',
+            artefato       = '$artefato',
+            ja_ocorreu     = '$ja_ocorreu',
+            classificacao  = '$classificacao',
+            acao_corretiva = '$acao_corretiva',
+            concluido      = '$concluido'
             WHERE id = '$idnaoconformidade';";
 
             $conn->query($sqlUp);
@@ -40,7 +42,8 @@
             isset($_POST['input-artefato']) &&
             isset($_POST['input-ja-ocorreu']) &&
             isset($_POST['input-classificacao']) &&
-            isset($_POST['input-acao-corretiva'])
+            isset($_POST['input-acao-corretiva']) && 
+            isset($_POST['input-concluido'])
         ){return true;}
         return false;
     }
