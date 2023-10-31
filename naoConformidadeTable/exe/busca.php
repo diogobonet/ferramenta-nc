@@ -65,10 +65,10 @@
                         $selectedSelecionar1 = "selected";
                     }
                     elseif($result['concluido'] == "Sim") {
-                        $selectedSim = "selected";
+                        $selectedSim3 = "selected";
                     }
                     else($result['concluido'] == "Não") {
-                        $selectedNao = "selected";
+                        $selectedNao3 = "selected";
                     }
 
                     echo "
