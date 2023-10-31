@@ -28,7 +28,6 @@
                 while($result = $query->fetch_assoc()){
                     $selectedSelecionar1 = ""; $selectedSim = "";
                     $selectedNao        = ""; $selectedNA  = "";
- 
                     if($result['ja_ocorreu'] == "Selecionar") {
                         $selectedSelecionar1 = "selected";
                     }
@@ -44,7 +43,6 @@
 
                     $selectedSelecionar2 = ""; $selectedAlta = "";
                     $selectedMedia        = ""; $selectedBaixa  = "";
- 
                     if($result['classificacao'] == "Selecionar") {
                         $selectedSelecionar2 = "selected";
                     }
@@ -58,17 +56,12 @@
                         $selectedBaixa = "selected";
                     }
 
-                    $selectedSelecionar3 = ""; $selectedSim3 = "";
-                    $selectedNao3        = "";
- 
-                    if($result['concluido'] == "Selecionar") {
-                        $selectedSelecionar1 = "selected";
-                    }
-                    elseif($result['concluido'] == "Sim") {
-                        $selectedSim3 = "selected";
+                    $selectedSim2 = ""; $selectedNao2 = "";
+                    if($result['concluido'] == "Sim") {
+                        $selectedSim2 = "selected";
                     }
                     else($result['concluido'] == "Não") {
-                        $selectedNao3 = "selected";
+                        $selectedNao2 = "selected";
                     }
 
                     echo "
@@ -104,9 +97,8 @@
                         </td>
                         <td style='width: 5%;'> <!-- Concluído -->
                             <select name='input-concluido' id='input-concluido'>  
-                                <option value='Selecionar' $selectedSelecionar3>Selecionar</option>
-                                <option value='Sim' $selectedSim3>Sim</option>
-                                <option value='Não' $selectedNão3>Não</option>
+                                <option value='Sim' $selectedSim2>Sim</option>
+                                <option value='Não' $selectedNão2>Não</option>
                             </select>
                         </td>
                         <td>
