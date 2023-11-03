@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Comfortaa&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #eeeeee;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+header {
+    padding: 8px;
+    text-align: center;
+}
+
+header > h1 {
+    font-size: 26px;
+}
+
+main {
+    padding: 12px 120px 0px 120px;
+}
+
+form {
+    margin-top: 10px;
+}
+
+input {
+    padding: 8px;
+    width: 50%;
+}
+
+button {
+    padding: 8px;
+    cursor:pointer;
+}
+
+div#div-table{
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+.action-edit {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+th {
+    background-color: #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+input.td-input{
+    padding: 0.5rem 0; margin: 0;
+    border-radius: 0.5rem;
+    width: 100%; 
+    border:none;
+}
+
+.textarea-input{
+    width: 100%; 
+    border:none;
+    resize: none;
+    font-family: "Comfortaa", Arial, sans-serif;
+}
+
+tr.perguntas-tr{
+    width: 100%;
+}
+
+.footer-buttons {
+    padding: 20px;
+    text-align: center;
+}
+
+/* =-=-=-=-=-=-=-=-=-= LOGIN =-=-=-=-=-=-=-=-=-= */
+form#formulario-login{
+    padding: 30px;margin: 0;
+    height: 50%;
+    width: 40%;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-around;
+    border: black 2px solid;
+    border-radius: 10px;
+    min-width: 400px;
+    min-height: 300px;
+    box-shadow: 0px 0px 6px 1px black;
+}
+
+form#formulario-login label{
+    display:flex; justify-content: space-around; align-items: center;
+    height: 50%; width: 60%; min-width: 350px;
+    font-size: 1.5rem;
+    cursor:pointer;
+}
+
+form#formulario-login label input{
+    font-family: 'Comfortaa', sans-serif;
+    border: black 2px solid;
+    border-radius: 10px;
+}
+
+form#formulario-login h1{
+    text-align: center;
+    font-size: 3rem;
+}
+
+main#main-login{
+    height: 100vh; width: 100vw;
+    padding: 0;margin: 0;
+    display:flex; justify-content: center; align-items: center;
+}
+
+button#botao-submit{
+    width: 40%; height: 2rem;
+    font-size: 1rem;
+    padding: 5px; margin: 0;
+    border-radius: 8px;
+    font-family: 'Comfortaa', sans-serif;
+    cursor:pointer;
+}
+
+button#botao-submit:hover {
+    background-color: black;
+    color: white;
+}
+
+.div-login {
+    display: flex;
+    flex-direction: column;
+    gap: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+select {
+    padding: 5px;
+}
+
+.button-save {
+    text-decoration: underline;
+    background-color: none;
+    border: none;
+    font-size: 16px;
+    font-family: 'Comfortaa', sans-serif;
+    color: blue;
+}
