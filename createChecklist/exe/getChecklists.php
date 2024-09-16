@@ -16,15 +16,19 @@
             if($query->num_rows > 0){
                 while($result = $query->fetch_assoc()){
                     echo "<tr class='perguntas-tr'>
-                            <td class='checkbox-td'>
-                                <h5>" . $result['id'] . "</h5>
-                            </td>
-                            <td>" . $result['nome'] . "</td>
-                            <td class='action-edit'>
-                                <a href='../checklist/checklist.php?idchecklist=" . $result['id'] . "'>Abrir</a>
-                                <a href=''>Editar</a>
-                                <a href=''>Excluir</a>
-                            </td>
+                            <form action='exe/atualizar.php?idchecklist=" . $result['id'] .  "' method='POST'>
+                                <td class='checkbox-td'>
+                                    <h5>" . $result['id'] . "</h5>
+                                </td>
+                                <td style='width: 50%;'>
+                                    <textarea name='input-nome' class='textarea-input' id='input-nome' type='text'>" . $result['nome'] . "</textarea>
+                                </td>
+                                <td class='action-edit'>
+                                    <a href='../checklist/checklist.php?idchecklist=" . $result['id'] . "'>Abrir</a>
+                                    <button class='button-save'>Salvar</button>
+                                    <a href='exe/excluir.php?idchecklist=". $result['id'] ."'>Excluir</a>
+                                </td>
+                            </form>                            
                         </tr>";
                 }
             }else{

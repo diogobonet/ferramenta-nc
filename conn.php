@@ -1,6 +1,6 @@
 <?php
     const host = "localhost:3306"; const dbName = "db_nc";
-    const user = "gb";             const pass   = "mysql@204";
+    const user = "root";           const pass   = "";
 
     $conn = new mysqli(host, user, pass, dbName);
 

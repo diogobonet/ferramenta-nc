@@ -27,7 +27,7 @@
                 
                 while($result = $query->fetch_assoc()){
                     $selectedSelecionar1 = ""; $selectedSim = "";
-                    $selectedNao        = ""; $selectedNA  = "";
+                    $selectedNao         = ""; $selectedNA  = "";
                     if($result['ja_ocorreu'] == "Selecionar") {
                         $selectedSelecionar1 = "selected";
                     }
@@ -41,8 +41,8 @@
                         $selectedNA = "selected";
                     }
 
-                    $selectedSelecionar2 = ""; $selectedAlta = "";
-                    $selectedMedia        = ""; $selectedBaixa  = "";
+                    $selectedSelecionar2 = ""; $selectedAlta  = "";
+                    $selectedMedia       = ""; $selectedBaixa = "";
                     if($result['classificacao'] == "Selecionar") {
                         $selectedSelecionar2 = "selected";
                     }
@@ -60,7 +60,7 @@
                     if($result['concluido'] == "Sim") {
                         $selectedSim2 = "selected";
                     }
-                    else($result['concluido'] == "Não") {
+                    else {
                         $selectedNao2 = "selected";
                     }
 
@@ -98,7 +98,7 @@
                         <td style='width: 5%;'> <!-- Concluído -->
                             <select name='input-concluido' id='input-concluido'>  
                                 <option value='Sim' $selectedSim2>Sim</option>
-                                <option value='Não' $selectedNão2>Não</option>
+                                <option value='Não' $selectedNao2>Não</option>
                             </select>
                         </td>
                         <td>

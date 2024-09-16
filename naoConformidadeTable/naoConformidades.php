@@ -31,6 +31,7 @@
                 <th>Observações</th>
                 <th>Classificação</th>
                 <th>Ação corretiva</th>
+                <th>Concluído</th>
                 <th>Ação</th>
             </tr>
 

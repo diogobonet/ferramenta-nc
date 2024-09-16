@@ -45,6 +45,7 @@ CREATE TABLE `nao_conformidades` (
   `classificacao` varchar(20) DEFAULT NULL,
   `acao_corretiva` varchar(300) DEFAULT NULL,
   `FK_id_pergunta` int DEFAULT NULL,
+  `concluido` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `FK_id_checklist_idx` (`FK_id_checklist_nc`),
